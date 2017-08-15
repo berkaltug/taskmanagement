@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Task Interface - CRUD in Spring Boot with Spring Data JPA</title>
+        <!--/*/ <th:block th:include="fragments/head :: head"></th:block> /*/-->
+    </head>
+    <body>
+        <!--/*/ <th:block th:include="fragments/header :: body"></th:block> /*/-->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <!--<div class="container">-->
+                    <div class="panel panel-default">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading">Add Contact</div>
+                        <div class="panel-body">
+                       		<form action="/tasks/add" th:action="@{/tasks/add}" th:object="${task}" method="post">
+                       		<div class="form-group">
+                       			<label for="ti1">Task ID</label>
+                			<input type="text" class="form-control" id="ti1" name ="ti1" th:field="*{task_id}"/>
+                      		<span  class="help-block" th:if="${#fields.hasErrors('task_id')}" th:errors="*{task_id}">Address Error</span>
+                      		</div>
+                      		<div class="form-group">
+                      		<label for="ti2">Title</label>
+                      		<input type="text" class="form-control" id="ti2" name ="ti2" th:field="*{title}"/>
+                      		 <span  class="help-block" th:if="${#fields.hasErrors('title')}" th:errors="*{title}">Address Error</span>
+                      		</div>
+                       		<div class="form-group">
+                       		<label for="textarea1">Context</label>
+                       		<textarea class="form-control" rows="5" id="textarea1" name="textarea1" th:field="*{context}"></textarea>
+                       		 <span  class="help-block" th:if="${#fields.hasErrors('context')}" th:errors="*{context}">Address Error</span>
+                       		</div>
+                       		<div class="form-group">
+                      		<label for="ti3">Assignee</label>
+                      		<input type="text" class="form-control" id="ti3" name ="ti3" th:field="*{assignee}"/>
+                      		 <span  class="help-block" th:if="${#fields.hasErrors('assignee')}" th:errors="*{assignee}">Address Error</span>
+                      		</div>
+                      		<div class="form-group">
+                       		<label for="notes">Notes</label>
+                       		<textarea class="form-control" rows="3" id="notes" name="notes" th:field="*{notes}"></textarea>
+                       		 <span  class="help-block" th:if="${#fields.hasErrors('notes')}" th:errors="*{notes}">Address Error</span>
+                       		</div>
+                       		<div class="text-right">
+                                    <a href="/tasks" th:href="@{/tasks}" class="btn btn-default">Cancel</a>
+                                    <button type="submit" class="btn btn-primary">Save</button>
+                                </div>
+                    	</form>
+                                             
+
+                        </div>
+                        <div class="panel-footer">
+                        </div>
+                    </div>
+                    <!--</div>-->
+                </div>
+            </div>
+        </div>
+        <!--/*/ <th:block th:include="fragments/js :: body"></th:block> /*/-->
+        <script src="../static/js/app.js" th:src="@{/js/app.js}"></script>
+    </body>
+</html>

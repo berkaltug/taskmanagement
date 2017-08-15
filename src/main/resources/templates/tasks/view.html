@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Viewing Task</title>
+        <!--/*/ <th:block th:include="fragments/head :: head"></th:block> /*/-->
+    </head>
+    <body>
+        <!--/*/ <th:block th:include="fragments/header :: body"></th:block> /*/-->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2">
+                    <!--<div class="container">-->
+                    <div class="panel panel-default">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading">View Task</div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label for="inputId">ID</label>
+                                <input type="text" class="form-control" id="inputId" placeholder="ID" th:field="*{task.id}" name="id" disabled="disabled" />
+                            </div>
+                            <div class="form-group">
+                                <label for="inputLastName">Task ID</label>
+                                <input type="text" class="form-control" id="inputLastName" placeholder="Last Name" th:field="*{task.task_id}" name="lastName" disabled="disabled" />
+                            </div>
+                             <div class="form-group">
+                                <label for="title">Title</label>
+                                <input type="text" class="form-control" id="title" placeholder="title" th:field="*{task.title}" name="title" disabled="disabled" />
+                            </div>
+                            <div class="form-group">
+                       		<label for="textarea1">Context</label>
+                       		<textarea class="form-control" rows="5" id="textarea1" name="textarea1" th:field="*{task.context}" disabled="disabled"></textarea>
+                       		</div>
+                       		<div class="form-group">
+                       		<label for="updatetime">Update Time</label>
+                       		<!--  <input type="text" class="form-control" id="updatetime" name="updatetime" th:field="*{#dates(task.update_date)}" disabled="disabled" />
+                       		</div>
+                       		<div class="form-group">
+                       		<label for="create_date">Create Time</label>
+                       		<input type="text" class="form-control" id="createtime" name="createtime" th:field="*{#dates(task.create_date)}" disabled="disabled" />
+                       		</div>
+                       		<div class="form-group"> -->
+                       		<label for="notes">Notes</label>
+                       		<textarea class="form-control" id="notes" name="notes" rows="3" th:field="*{task.notes}" disabled="disabled"></textarea>
+                       		</div>
+                            <div class="text-right">
+                                <a href="/tasks" th:href="@{/tasks}" class="btn btn-default">Back</a>
+                                <a th:href="@{'/tasks/edit/' + ${task.id}}" class="btn btn-primary">Edit</a>
+                            </div>
+                        </div>
+                        <div class="panel-footer">
+                        </div>
+                    </div>
+                    <!--</div>-->
+                </div>
+            </div>
+        </div>
+        <!--/*/ <th:block th:include="fragments/js :: body"></th:block> /*/-->
+        <script src="../static/js/app.js" th:src="@{/js/app.js}"></script>
+    </body>
+</html>
