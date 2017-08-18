@@ -16,14 +16,15 @@
                         <!-- Default panel contents -->
                         <div class="panel-heading">Edit Contact</div>
                         <div class="panel-body">
-                            <form th:action="@{/tasks/edit}" th:object="${task}" method="post">
+                            <form th:action="@{/tasks/update}" th:object="${task}" method="post">
+                            
                                 <div class="form-group">
                                 <label for="id">ID</label>
-                            		<input type="text" class="form-control" th:field="*{id}" id="id" disabled="disabled"/>
+                            	  <input type="text" class="form-control"  id="id" th:field="*{id}" readonly="readonly"/>
                                 </div>
                                 <div class="form-group">
                                     <label for="inputId">Task ID</label>
-                                    <input type="text" class="form-control" id="inputId" placeholder="ID" th:field="*{task_id}" disabled="disabled" />
+                                    <input type="text" class="form-control" id="inputId" placeholder="ID" th:field="*{task_id}"/>
                                 </div>
                                 <div class="form-group">
                                 <label for="ti2">Title</label>

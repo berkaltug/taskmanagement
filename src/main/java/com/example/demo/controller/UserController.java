@@ -55,7 +55,7 @@ public class UserController {
 	
 	@RequestMapping(value="/update",method=RequestMethod.POST)
 	public String updateUser(User user) {
-		this.us.saveUser(user);
+		this.us.updateUser(user);
 		return "redirect:/users";
 	}
 	@RequestMapping(value="/delete/{id}",method=RequestMethod.GET)

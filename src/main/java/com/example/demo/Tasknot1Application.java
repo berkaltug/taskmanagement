@@ -12,8 +12,8 @@ public class Tasknot1Application {
 
 	public static void main(String[] args) {
 		SpringApplication.run(Tasknot1Application.class, args);
-		Task tk = new Task();
-		System.out.println(tk.getCreate_date());
+//		Task tk = new Task();
+//		System.out.println(tk.getCreate_date());
 		
 	}
 }

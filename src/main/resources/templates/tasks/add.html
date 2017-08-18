@@ -10,7 +10,7 @@
         <!--/*/ <th:block th:include="fragments/header :: body"></th:block> /*/-->
         <div class="container">
             <div class="row">
-                <div class="col-md-8 col-md-offset-2">
+                <div class="col-md-8 col-sm-offset-2">
                     <!--<div class="container">-->
                     <div class="panel panel-default">
                         <!-- Default panel contents -->
@@ -33,10 +33,10 @@
                        		 <span  class="help-block" th:if="${#fields.hasErrors('context')}" th:errors="*{context}">Address Error</span>
                        		</div>
                        		<div class="form-group">
-                      		<label for="ti3">Assignee</label>
-                      		<input type="text" class="form-control" id="ti3" name ="ti3" th:field="*{assignee}"/>
-                      		 <span  class="help-block" th:if="${#fields.hasErrors('assignee')}" th:errors="*{assignee}">Address Error</span>
-                      		</div>
+                      		<label for="userlist">Assignee</label>
+                      		<select th:field="*{assignee}" class="form-control" id="userlist"> <!-- BURAYA DİKKAT ! -->
+                      		<option th:each="user : ${users}" th:value="${user.isim}" th:text="${user.isim}">Assignee</option>  <!-- BURAYA DİKKAT ! -->
+                      		</select></div>
                       		<div class="form-group">
                        		<label for="notes">Notes</label>
                        		<textarea class="form-control" rows="3" id="notes" name="notes" th:field="*{notes}"></textarea>

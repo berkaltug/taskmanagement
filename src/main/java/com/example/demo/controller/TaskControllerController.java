@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 
 import com.example.demo.services.taskservice;
+import com.example.demo.services.userservice;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -25,10 +26,15 @@ import javax.validation.Valid;
 public class TaskControllerController {
 	
 	public taskservice taskservice;
+	public userservice us;
 	
 	@Autowired
 	public void setTaskService(taskservice taskservice) {
 		this.taskservice=taskservice;	
+	}
+	@Autowired
+	public void setUserService(userservice us) {
+		this.us=us;
 	}
 	
 	@RequestMapping(value = { "", "/" })
@@ -42,11 +48,13 @@ public class TaskControllerController {
 	@RequestMapping(value="/add",method=RequestMethod.GET)
 	public String addTaskForm(Task task,Model model) {
 		model.addAttribute("activePage", "tasks");
+		model.addAttribute("users",this.us.getAllUser());
         return "tasks/add";
 	}
 	
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String addContact(@Valid Task task, BindingResult bindingResult, Model model) {
+    public String addContact(@ModelAttribute(value="task") @Valid Task task, BindingResult bindingResult,
+    						 Model model) {
         if (bindingResult.hasErrors()) {
             model.addAttribute("activePage", "tasks");
             return "tasks/add";
@@ -69,11 +77,12 @@ public class TaskControllerController {
         return "tasks/edit";
     }
 	
+	
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
     public String updateTask(Task task) {
 //        System.out.println("Contact ID: " + task.getId());
-        this.taskservice.saveTask(task);
-        return "redirect:/tasks/view/" + task.getId();
+        this.taskservice.updateTask(task);
+        return "redirect:/tasks/view/"+ task.getId();
     }
 	
 	@RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
