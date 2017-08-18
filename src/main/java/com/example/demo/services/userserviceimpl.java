@@ -2,6 +2,7 @@ package com.example.demo.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.services.userservice;
 import com.example.demo.repository.userrepository;
@@ -36,4 +37,12 @@ public class userserviceimpl implements userservice{
 	public User getUserById(int id) {
 		return this.ur.findOne(id);
 	}
+	@Transactional
+	@Override
+	public User updateUser(User u) {
+		
+		this.ur.updateUserById(u.getId(),u.getIsim());
+		return u;
+	}
+	
 }

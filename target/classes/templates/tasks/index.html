@@ -4,10 +4,10 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Tasks</title>
-        <!--/*/ <th:block th:include="fragments/head :: head"></th:block> /*/-->
+         <th:block th:include="fragments/head :: head"></th:block> 
     </head>
-    <body >
-        <!--/*/ <th:block th:include="fragments/header :: body"></th:block> /*/-->
+    <body > 
+        <th:block th:include="fragments/header :: body"></th:block> 
         <div class="container">
             <div class="row">
                 <div class="col-sm-10 col-sm-offset-1">
@@ -35,9 +35,8 @@
                                     <td th:text = "${task.task_id}"></td>
                                     <td th:text = "${task.title}"></td>
                                     <td th:text = "${task.assignee}"></td>
-                                    
-                                    <td th:text = "${#dates.createToday()}"></td>
-                                    <td th:text = "${{task.create_date}}"></td>
+                                    <td th:text = "${task.update_date}"></td>
+                                    <td th:text = "${task.create_date}"></td>
                                     
                                     <td>
                                         <div class="btn-group" role="group" aria-label="...">
@@ -59,7 +58,7 @@
                 </div>
             </div>
         </div>
-        <!--/*/ <th:block th:include="fragments/js :: body"></th:block> /*/-->
+         <th:block th:include="fragments/js :: body"></th:block> 
         <script src="../static/js/app.js" th:src="@{/js/app.js}"></script>
-    </body>
-</html>
+ </body>
+    </html>
