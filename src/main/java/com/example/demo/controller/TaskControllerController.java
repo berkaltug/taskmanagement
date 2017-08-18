@@ -69,11 +69,12 @@ public class TaskControllerController {
         return "tasks/edit";
     }
 	
+	
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
     public String updateTask(Task task) {
 //        System.out.println("Contact ID: " + task.getId());
-        this.taskservice.saveTask(task);
-        return "redirect:/tasks/view/" + task.getId();
+        this.taskservice.updateTask(task);
+        return "redirect:/tasks/view/"+ task.getId();
     }
 	
 	@RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)

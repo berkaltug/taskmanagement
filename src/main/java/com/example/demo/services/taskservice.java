@@ -8,5 +8,6 @@ public interface taskservice {
 	Task saveTask(Task tk);
 	void deleteTask(int id);
 	Task getTaskById(int id);
+	Task updateTask(Task tk);   
 }
 
