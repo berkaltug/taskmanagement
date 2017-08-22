@@ -5,6 +5,6 @@ import com.example.demo.domain.ReleasePlan;
 public interface ReleasePlanService {
 
 	Iterable<ReleasePlan> getAllReleasePlan();
-	void deleteReleasePlan(int id);
+	void deleteReleasePlan(String id);
 	
 }

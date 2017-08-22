@@ -8,6 +8,36 @@ body {
 }
 
 body {
-	background:-webkit-linear-gradient(left top,#333333,#cccccc)
+	background:-webkit-linear-gradient(left,#0d1a30,#063582 30%,#85a6db,#063582 70%,#0d1a30);
 }
 
+#starterpage{
+	color:white;
+}
+.jumbotron{
+	background-color:rgba(153,153,153,0.4);
+}
+.btn-group>a{
+	border-radius:0%;
+	border-color:grey;
+	border-width:1px;
+}
+.btn-group>a:hover{
+	border-color:grey;
+	border-width:1px;
+}
+.panel-heading>a{
+	border-radius:0%;
+	border-color:grey;
+	border-width:1px;
+}
+.panel-heading>a{
+	border-radius:0%;
+	border-color:grey;
+	border-width:1px;
+}
+.panel-default{
+	border-radius:0%;
+	border-width:2px;
+	border-color:grey;
+}

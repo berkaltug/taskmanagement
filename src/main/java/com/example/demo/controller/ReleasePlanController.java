@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,9 +11,11 @@ import com.example.demo.services.ReleasePlanService;
 @Controller
 @RequestMapping("/ReleasePlans")
 public class ReleasePlanController {
-
+	
+	
 	private ReleasePlanService rps;
 	
+	@Autowired
 	public void setReleasePlanService(ReleasePlanService rps) {
 		this.rps=rps;
 	}
@@ -25,7 +28,7 @@ public class ReleasePlanController {
 	}
 	
 	@RequestMapping(value= {"/delete/{id}"})
-		public String deletePlan(@PathVariable Integer id) {
+		public String deletePlan(@PathVariable String id) {
 		this.rps.deleteReleasePlan(id);
 		return "redirect:/ReleasePlans";
 	}

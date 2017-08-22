@@ -74,6 +74,7 @@ public class TaskControllerController {
     public String editTask(@PathVariable Integer id, Model model) {
         model.addAttribute("task", this.taskservice.getTaskById(id));
         model.addAttribute("activePage", "tasks");
+        model.addAttribute("users",this.us.getAllUser());
         return "tasks/edit";
     }
 	

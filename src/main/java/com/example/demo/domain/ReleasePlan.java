@@ -15,8 +15,8 @@ import java.util.Date;
 @Entity
 @Table(name="release_plan" ,schema="berk")
 public class ReleasePlan {
-
 	@Id
+	@NotEmpty
 	private String id;
 	@NotEmpty
 	private Timestamp relase_date;
@@ -32,6 +32,7 @@ public class ReleasePlan {
 	public void Release_Plan() {
 	}
 	
+
 	public String getId() {
 		return id;
 	}

@@ -37,9 +37,10 @@
                        		 <span  class="help-block" th:if="${#fields.hasErrors('context')}" th:errors="*{context}">Address Error</span>
                        		</div>
                        		<div class="form-group">
-                      		<label for="ti3">Assignee</label>
-                      		<input type="text" class="form-control" id="ti3" name ="ti3" th:field="*{assignee}"/>
-                      		 <span  class="help-block" th:if="${#fields.hasErrors('assignee')}" th:errors="*{assignee}">Address Error</span>
+                      		<label for="selectuser">Assignee</label>
+                      		<select th:field="*{assignee}" class="form-control" id="selectuser">
+                      		<option th:each="user : ${users}" th:value="${user.isim}" th:text="${user.isim}">Assignee</option>
+                      		</select>
                       		</div>
                       		<div class="form-group">
                        		<label for="textarea2">Notes</label>

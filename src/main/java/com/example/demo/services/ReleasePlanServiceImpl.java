@@ -17,7 +17,7 @@ public class ReleasePlanServiceImpl implements ReleasePlanService {
 	}
 	
 	@Override
-	public void deleteReleasePlan(int id) {
+	public void deleteReleasePlan(String id) {
 		this.rpr.delete(id);
 	}
 	@Override
